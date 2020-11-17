@@ -22,15 +22,15 @@ const Navibar = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Navigation</NavbarBrand>
+        <NavbarBrand >Navigation</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/home/">Home</NavLink>
+              <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/eric-yeung/visualizer">About</NavLink>
+              <NavLink href="https://github.com/eric-yeung/visualizer" target="_blank">About</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -40,7 +40,7 @@ const Navibar = (props) => {
                 <DropdownItem>
                   Search by CPE
                 </DropdownItem>
-                <DropdownItem>
+                <DropdownItem href="/CPECVE">
                   Search by CVE
                 </DropdownItem>
               </DropdownMenu>

@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/header';
 import Cpes from './components/Cpes';
 import axios from 'axios';
+import CPECVE from './components/pages/CPECVEs'
 import Navbar from './components/layout/navbar';
+import LeftColumn from './components/layout/leftcolumn';
 import Pagination from './components/layout/pagination';
 
 
@@ -21,16 +23,29 @@ export class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="container">
+      <Router>
+        <div className="">
+          <div className="container">
 
-          <Header />
-          <Navbar />
-          <Cpes cpes={this.state.cpes} />
-          <Pagination />
+            <Header />
+            <Navbar />
+            
+            <Route 
+              exact
+              path="/" render= {props => (
+              <React.Fragment>
+                <Cpes cpes={this.state.cpes}/>
+              </React.Fragment>
+            )} 
+            />
 
+            <Route path="/CPECVE" component={CPECVE} />
+
+            <Pagination />
+
+          </div>
         </div>
-      </div>
+      </Router> 
     )
   }
 }
