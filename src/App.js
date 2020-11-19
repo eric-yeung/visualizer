@@ -35,14 +35,13 @@ export class App extends Component {
               exact
               path="/" render= {props => (
               <React.Fragment>
-                <Cpe cpes={this.state.cpes}/>
+                <Cpe cpes={this.state.cpes} searchQuery={"Microsoft Word"}/>
               </React.Fragment>
             )} 
             />
 
             <Route path="/CPECVE" component={CPECVE} />
 
-            <Pagination />
 
           </div>
         </div>
