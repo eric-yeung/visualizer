@@ -42,8 +42,11 @@ export default function Cpe(props) {
         ]}
         data={props.cpes}        
         options={{
-          sorting: true
+          sorting: true,
+          selection: true
         }}
+        onSelectionChange={(rows) => alert('You selected ' + rows[0].name)}
+
       />
     )
     
