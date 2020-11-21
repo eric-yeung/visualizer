@@ -1,7 +1,6 @@
 import React, { useEffect, useState }  from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MaterialTable from 'material-table'
-import { createMuiTheme, makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 export default function Cpe(props) {
     const [title, setTitle] = useState('A List of Vulnerabilities for: ' + props.searchQuery)
@@ -25,10 +24,11 @@ export default function Cpe(props) {
         if(!onLoad){
             var counter = 1;
             props.cpes.map((cpe) => (
-            cpe.name = getShortnedName(cpe.name),
-            cpe.id = counter++
+                cpe.name = getShortnedName(cpe.name),
+                cpe.id = counter++
             ));
             setOnLoad(true)
+
         }
     })
 
@@ -39,15 +39,20 @@ export default function Cpe(props) {
         return name
     }
 
-    function displayCVEs(name){
-        setShowCpe(false)
-        setTitle('A List of Weaknesses for: ' +name)
-        //setCveData = //call the function to get CVE's python
-        
+    function displayCVEs(name) {
+        //setCveData = //call the function to get cveData's python
+        fetch('/getCVE?cpe='+name).then(res => res.json()).then(data => {
+            setCveData(data.cve.cves);
+            console.log(data.cve.cves)
+            
+            setShowCpe(false)
+            setTitle('A List of Weaknesses for: ' +name)
+        });
     }
    
     if(showCpe){
         return (
+
             <MuiThemeProvider theme={theme}>
                 <MaterialTable
                 title={title}     // Search result here
@@ -71,7 +76,7 @@ export default function Cpe(props) {
         )
     }
     else{
-        console.log("hey")
+
         return (
             <MuiThemeProvider theme={theme}>
                 <MaterialTable
@@ -79,10 +84,13 @@ export default function Cpe(props) {
                 columns={[
                 { title: 'Number', field: 'id' },
                 { title: 'Name', field: 'name' },
-                { title: 'Version', field: 'version', type: 'numeric' },
+                { title: 'Description', field: 'description' },
+                { title: 'Published Date', field: 'published date' },
+                { title: 'V2', field: 'v2', type: 'numeric' },
+                { title: 'V3', field: 'v3', type: 'numeric' },
 
                 ]}
-                data={props.cpes}        
+                data={cveData}        
                 options={{
                 sorting: true,
                 selection: true,
