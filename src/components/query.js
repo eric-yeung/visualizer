@@ -6,7 +6,7 @@ export default function query() {
     const name = 'Microsoft Word'
     
     useEffect(() => {
-        fetch('/getCPE?cpe='+name).then(res => res.json()).then(data =>{
+        fetch('/getCPE?search='+name).then(res => res.json()).then(data =>{
             //setCPEData(data.cpe.cpes)
             console.log(data.cpe.cpes);
         });
