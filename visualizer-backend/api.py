@@ -1,4 +1,4 @@
-import time
+import time,re
 from flask import Flask
 from flask import request
 import sys,requests,json
@@ -58,8 +58,11 @@ def getCVE():
 
         sevs = buffer.split("\n") # This creates a list which contains some empty sets
         sevs = (list(filter(lambda x: x!='',sevs))) #This removes the empty sets ^
-        v3 = sevs[0]
-        v2 = sevs[1].strip() 
+        v3 = sevs[0][4:]
+        v2 = sevs[1].strip()[4:]
+
+        v3 = re.sub("[^\d.]+", "", v3)
+        v2 = re.sub("[^\d.]+", "", v2)
 
         data['cves'].append({
         'name': cveName,

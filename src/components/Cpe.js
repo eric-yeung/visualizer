@@ -3,7 +3,7 @@ import MaterialTable from 'material-table'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 export default function Cpe(props) {
-    const [title, setTitle] = useState('A List of Vulnerabilities for: ' + props.searchQuery)
+    const [title, setTitle] = useState('Product: ' + props.searchQuery)
     const [onLoad, setOnLoad] = useState(false)
     const [showCpe, setShowCpe] = useState(true)
     const [cveData, setCveData] = useState([])
