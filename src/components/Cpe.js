@@ -22,11 +22,11 @@ export default function Cpe(props) {
       });
     useEffect(()=>{
         if(!onLoad){
-            var counter = 1;
-            props.cpes.map((cpe) => (
-                cpe.name = getShortnedName(cpe.name),
-                cpe.id = counter++
-            ));
+            // var counter = 1;
+            // props.cpes.map((cpe) => (
+            //     cpe.name = getShortnedName(cpe.name),
+            //     cpe.id = counter++
+            // ));
             setOnLoad(true)
 
         }

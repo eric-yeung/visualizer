@@ -32,19 +32,7 @@ const Navibar = (props) => {
             <NavItem>
               <NavLink href="https://github.com/eric-yeung/visualizer" target="_blank">About</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Search by CPE
-                </DropdownItem>
-                <DropdownItem href="/CPECVE">
-                  Search by CVE
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+ 
           </Nav>
         </Collapse>
       </Navbar>
