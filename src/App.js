@@ -13,6 +13,7 @@ import Select from '@material-ui/core/Select';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
+import About from './components/layout/About';
 
 
 
@@ -88,9 +89,9 @@ export function App () {
         <div className="container">
           <Header />
           <Navbar />
-          {showSearchBar
-           ? 
+          {showSearchBar? 
            <div>
+            
             <FormControl >
               <InputLabel htmlFor="demo-customized-textbox" >Search for a Product</InputLabel>
               <BootstrapInput                  
@@ -99,6 +100,7 @@ export function App () {
               />
               
             </FormControl>
+
             <FormControl >
               <InputLabel id="demo-customized-select-label">CPE Format</InputLabel>
               <Select
@@ -131,7 +133,7 @@ export function App () {
           />
           }
 
-
+          <Route path="/About" component={About} />
         </div>
       </div>
     </Router> 

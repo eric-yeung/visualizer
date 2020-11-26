@@ -1,9 +1,11 @@
 import React, { useEffect, useState }  from 'react';
 import MaterialTable from 'material-table'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 
 export default function Cpe(props) {
-    const [title, setTitle] = useState('A List of Vulnerabilities for: ' + props.searchQuery)
+    const [title, setTitle] = useState('Keyword: ' + props.searchQuery)
     const [onLoad, setOnLoad] = useState(false)
     const [showCpe, setShowCpe] = useState(true)
     const [cveData, setCveData] = useState([])
@@ -55,52 +57,62 @@ export default function Cpe(props) {
 
             <MuiThemeProvider theme={theme}>
                 <MaterialTable
-                title={title}     // Search result here
-                columns={[
-                { title: 'Number', field: 'id' },
-                { title: 'Name', field: 'name' },
-                { title: 'Version', field: 'version', type: 'numeric' },
-    
-                ]}
-                data={props.cpes}        
-                options={{
-                sorting: true,
-                selection: true,
-                search: true
-                }}
-                //onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.name))}
-                onRowClick={(rows) => displayCVEs(rows.target.textContent)}
-                //onSelectionChange={(rows) => alert('You selected ' + rows[0].name)}
-            />
+                    title={title}     // Search result here
+                    columns={[
+                    { title: 'Number', field: 'id' },
+                    { title: 'Name', field: 'name' },
+                    { title: 'Version', field: 'version', type: 'numeric' },
+        
+                    ]}
+                    data={props.cpes}        
+                    options={{
+                    sorting: true,
+                    selection: true,
+                    search: true
+                    }}
+                    //onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.name))}
+                    onRowClick={(rows) => displayCVEs(rows.target.textContent)}
+                    //onSelectionChange={(rows) => alert('You selected ' + rows[0].name)}
+                />
           </MuiThemeProvider>
         )
     }
     else{
 
         return (
-            <MuiThemeProvider theme={theme}>
-                <MaterialTable
-                title={title}     // Search result here
-                columns={[
-                { title: 'Number', field: 'id' },
-                { title: 'Name', field: 'name' },
-                { title: 'Description', field: 'description' },
-                { title: 'Published Date', field: 'published date' },
-                { title: 'V2', field: 'v2', type: 'numeric' },
-                { title: 'V3', field: 'v3', type: 'numeric' },
+            <div>
+                <MuiThemeProvider theme={theme}>
+                    <MaterialTable
+                        title={title}     // Search result here
+                        columns={[
+                        { title: 'Number', field: 'id' },
+                        { title: 'Name', field: 'name' },
+                        { title: 'Description', field: 'description' },
+                        { title: 'Published Date', field: 'published date' },
+                        { title: 'V2', field: 'v2', type: 'numeric' },
+                        { title: 'V3', field: 'v3', type: 'numeric' },
 
-                ]}
-                data={cveData}        
-                options={{
-                sorting: true,
-                selection: true,
-                search: true
-                }}
-                //onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.name))}
-                onRowClick={(rows) => console.log(rows.target.textContent)}
-                //onSelectionChange={(rows) => alert('You selected ' + rows[0].name)}
-                />
-            </MuiThemeProvider>
+                        ]}
+                        data={cveData}        
+                        options={{
+                        sorting: true,
+                        selection: true,
+                        search: true
+                        }}
+                        //onRowClick={((evt, selectedRow) => setSelectedRow(selectedRow.tableData.name))}
+                        onRowClick={(rows) => console.log(rows.target.textContent)}
+                        //onSelectionChange={(rows) => alert('You selected ' + rows[0].name)}
+                    />
+                    
+                    </MuiThemeProvider>
+
+                <Button variant="contained" color="primary" onClick = {() =>setShowCpe(true)} > 
+                    Back to results
+                </Button>
+            </div>
+            
+            
+            
         )
     }
 

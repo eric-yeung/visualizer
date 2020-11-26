@@ -13,6 +13,8 @@ import {
   DropdownItem,
   NavbarText
 } from 'reactstrap';
+import About from './About';
+
 
 const Navibar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,11 +28,13 @@ const Navibar = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+
             <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>
+
             <NavItem>
-              <NavLink href="https://github.com/eric-yeung/visualizer" target="_blank">About</NavLink>
+              <NavLink href="/About">About</NavLink>
             </NavItem>
  
           </Nav>
