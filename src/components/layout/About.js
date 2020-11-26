@@ -22,8 +22,34 @@ export default function About() {
                         cpe:/(part):(vendor):(product):(version):(update):(edition):(language)
                     </ul>
                 </p>
+                
                 <h3>Common Vulnerabilities and Exposures</h3>
-                <p>A specific instance of vulnerability within a product or system.</p>
+                <p>
+                    A specific instance of vulnerability within a product or system.
+                </p>
+
+                <h4>Common Vulnerability Scoring System</h4>
+                <p>
+                    an open industry standard for assessing how severe computer system security vulnerabilities are. 
+                    CPEs are analyzed for severity based on the calculations of the CVSS. 
+                    Current version is 3.1.
+                </p>
+                
+                <p>
+                    CVSS is based on 3 metrics:
+                </p>
+                
+                <ul>
+                    <li>
+                        Base
+                    </li>
+                    <li>
+                        Temporal
+                    </li>
+                    <li>
+                        Environmental
+                    </li>
+                </ul> 
             </React.Fragment>
         </div>
     )
