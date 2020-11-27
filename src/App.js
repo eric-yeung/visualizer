@@ -16,17 +16,11 @@ import Navbar from './components/layout/navbar';
 import {  
   Button,
   InputBase,
-  makeStyles,
   FormControl,
   Select,
   InputLabel,
   MenuItem,
-  withStyles,
-  TextField,
-  Card,
-  CardActions,
-  CardContent,
-  Typography 
+  withStyles
 } from '@material-ui/core';
 
 
@@ -66,28 +60,8 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
 
 export function App () {
-
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
-
   const [search, setSearch] = useState('')
   const [version,setVersion] = useState(0)
   const [cpes, setCpes] = useState([])
@@ -101,7 +75,8 @@ export function App () {
   const handleRadioChange = (event) => {
     setVersion(event.target.value);
   };
-
+  
+  // eslint-disable-next-line
   useEffect(()=> {
     if(search.length>0 && version !== 0){
       setShowSubmit(true)
