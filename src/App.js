@@ -168,32 +168,6 @@ export function App () {
           }
         </div>
 
-        {/* <div className="buffer">
-          <Card className={classes.root}>
-            <CardContent>
-
-              <Typography className={classes.title} color="textSecondary" gutterBottom>
-                About us
-              </Typography>
-
-              <Typography variant="h5" component="h2">
-                Eric Yeung
-              </Typography>
-
-              <Typography className={classes.pos} color="textSecondary">
-                4th Year Computer Science Student
-              </Typography>
-
-              <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
-
-            </CardContent>
-          </Card>
-        </div> */}
-
       </div>
     </Router> 
   )

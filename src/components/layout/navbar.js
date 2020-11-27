@@ -10,16 +10,13 @@ import {
 
 
 const Navibar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div>
       <Navbar color="light" light expand="md">
         
         <NavbarBrand >Navigation</NavbarBrand>
                 
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+        <Nav className="mr-auto" navbar>
 
             <NavItem>
               <NavLink href="/">Home</NavLink>
@@ -30,7 +27,6 @@ const Navibar = (props) => {
             </NavItem>
  
           </Nav>
-        </Collapse>
       </Navbar>
     </div>
   );
