@@ -2,30 +2,22 @@ import React, { useState } from 'react';
 import {
   Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
 } from 'reactstrap';
-import About from './About';
 
 
 const Navibar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <div>
       <Navbar color="light" light expand="md">
+        
         <NavbarBrand >Navigation</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+                
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
 
@@ -34,7 +26,7 @@ const Navibar = (props) => {
             </NavItem>
 
             <NavItem>
-              <NavLink href="/About">About</NavLink>
+              <NavLink href="https://github.com/eric-yeung/visualizer" target="_blank">About/GitHub</NavLink>
             </NavItem>
  
           </Nav>

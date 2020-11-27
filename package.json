@@ -24,7 +24,6 @@
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd visualizer-backend && venv/bin/flask run --no-debugger",
-
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,5 +47,4 @@
     ]
   },
   "proxy": "http://localhost:5000"
-
 }

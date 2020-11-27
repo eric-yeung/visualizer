@@ -4,16 +4,30 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/layout/header';
 import Cpe from './components/Cpe';
 import Navbar from './components/layout/navbar';
-import Input from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import Button from '@material-ui/core/Button';
-import About from './components/layout/About';
+// import Input from '@material-ui/core/TextField';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+// import { makeStyles, , } from '@material-ui/core/styles';
+// import InputBase from '@material-ui/core/InputBase';
+// import Button from '@material-ui/core/Button';
+
+import {  
+  Button,
+  InputBase,
+  makeStyles,
+  FormControl,
+  Select,
+  InputLabel,
+  MenuItem,
+  withStyles,
+  TextField,
+  Card,
+  CardActions,
+  CardContent,
+  Typography 
+} from '@material-ui/core';
 
 
 
@@ -52,7 +66,27 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
 export function App () {
+
+  const classes = useStyles();
+  const bull = <span className={classes.bullet}>•</span>;
 
   const [search, setSearch] = useState('')
   const [version,setVersion] = useState(0)
@@ -85,23 +119,23 @@ export function App () {
 
   return (
     <Router>
-      <div className="">
-        <div className="container">
+      <div>
+        <div>
           <Header />
           <Navbar />
           {showSearchBar? 
-           <div>
+           <div className="container">
             
-            <FormControl >
-              <InputLabel htmlFor="demo-customized-textbox" >Search for a Product</InputLabel>
+            <FormControl fullWidth="true">
+              {/* <InputLabel label="search" htmlFor="demo-customized-textbox" >Search for a Product</InputLabel> */}
               <BootstrapInput                  
                 onChange={handleSearchChange}
                   id="demo-customized-textbox" placeholder="Search for a Product"
               />
               
             </FormControl>
-
-            <FormControl >
+        
+            <FormControl fullWidth="true">
               <InputLabel id="demo-customized-select-label">CPE Format</InputLabel>
               <Select
                 labelId="demo-customized-select-label"
@@ -132,9 +166,34 @@ export function App () {
           )} 
           />
           }
-
-          <Route path="/About" component={About} />
         </div>
+
+        {/* <div className="buffer">
+          <Card className={classes.root}>
+            <CardContent>
+
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                About us
+              </Typography>
+
+              <Typography variant="h5" component="h2">
+                Eric Yeung
+              </Typography>
+
+              <Typography className={classes.pos} color="textSecondary">
+                4th Year Computer Science Student
+              </Typography>
+
+              <Typography variant="body2" component="p">
+                well meaning and kindly.
+                <br />
+                {'"a benevolent smile"'}
+              </Typography>
+
+            </CardContent>
+          </Card>
+        </div> */}
+
       </div>
     </Router> 
   )
