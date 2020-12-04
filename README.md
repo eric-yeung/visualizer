@@ -6,7 +6,9 @@ Built using React and Flask API, we managed to scrape information from the Natio
 Due to limitations in the NVD, our own app is also limited as well. For instance, if CVEs didn't have scores that were v2 and v3, our site could not display it.
 If the NVD site itself could not load the CVEs, our site as well could not as well, as we relied on their resources. 
 
-### Backend Dependencies: 
+## Backend Dependencies: 
+npm install
+
 pip3 install python-dotenv in visualizer-backend
 
 pip3 install flask in visualizer-backend
