@@ -24,3 +24,5 @@ venv\Scripts\activate (to activate virtual environment)
 ```bash
 pip install Flask (within virtual environment)
 ```
+### Help with Flask:
+[Flask](https://flask.palletsprojects.com/en/1.1.x/installation/)
