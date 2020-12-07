@@ -33,5 +33,5 @@ flask run
 ```
 In project directory:
 ```bash
-npm install
+npm start
 ```
