@@ -9,14 +9,18 @@ If the NVD site itself could not load the CVEs, our site as well could not as we
 ## Backend Dependencies: 
 ```bash
 npm install
-
-pip3 install python-dotenv in visualizer-backend
-
-pip3 install flask in visualizer-backend
-
-source venv/bin/activate
-
 pip3 install requests
-
 pip3 install bs4
+```
+In visualizer-backend
+
+
+```bash
+pip3 install python-dotenv
+```
+```cmd
+venv\Scripts\activate (to activate virtual environment)
+```
+```bash
+pip install Flask (within virtual environment)
 ```
