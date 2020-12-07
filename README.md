@@ -13,8 +13,6 @@ pip3 install requests
 pip3 install bs4
 ```
 In visualizer-backend
-
-
 ```bash
 pip3 install python-dotenv
 ```
@@ -24,5 +22,16 @@ venv\Scripts\activate (to activate virtual environment)
 ```bash
 pip install Flask (within virtual environment)
 ```
-### Help with Flask:
+### Help with Flask and React:
 [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/)
+[React](https://reactjs.org/docs/getting-started.html)
+
+## To start:
+In venv:
+```bash
+flask run
+```
+In project directory:
+```bash
+npm install
+```
