@@ -1,4 +1,4 @@
-# CPE and CVE Visualizer Project for COMP 4990 
+# CPE and CVE Visualizer Project for COMP 4990 ![python](https://img.shields.io/badge/python-3.7-yellow) ![React](https://img.shields.io/badge/React-17.0.1-green)
 This was a project built by Eric Yeung, Teo Mastronardi, and Parteek Bindra as a final project.
 
 Built using React and Flask API, we managed to scrape information from the National Vulnerability Database to be put into our own site.
